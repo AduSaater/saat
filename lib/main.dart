@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:saat/counter_screen.dart';
 import 'package:saat/home/home_screen.dart';
 import 'package:saat/text_form_widget.dart';
 import 'package:saat/ui_design.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: UiDesign(),
+          home: CounterScreen(),
         );
       }
     );

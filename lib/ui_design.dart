@@ -11,7 +11,7 @@ class UiDesign extends StatelessWidget {
       backgroundColor: Colors.grey[200],
     appBar: AppBar(
       backgroundColor: Color(0xFF131312),
-      leading: GestureDetector(
+      leading: InkWell(
           onTap: (){
             _scaffoldKey.currentState?.openDrawer();
           },
@@ -25,7 +25,23 @@ class UiDesign extends StatelessWidget {
         )
       ],
     ),
-      drawer: Drawer(),
+      drawer: Drawer(
+        child: Column(
+          children: [
+          Container(
+            width: MediaQuery.of(context).size.width,
+            color: Color(0xFF843667),
+            child: Column(
+              children: [
+                SizedBox(height: 40,),
+                  Image.asset("assets/images/profile.png"),
+              ],
+            ),
+          ),
+            //
+          ],
+        ),
+      ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -123,24 +139,24 @@ class UiDesign extends StatelessWidget {
            ),
             //******************* Get Featured products ************
             SizedBox(height: 20.h,),
-            SizedBox(
-              height: 500.h,
-        child: GridView.builder(
-          physics: NeverScrollableScrollPhysics(),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2, // Number of columns
-        crossAxisSpacing: 10.0, // Horizontal space between items
-        mainAxisSpacing: 10.0, // Vertical space between items
-        childAspectRatio: 0.75, // Adjust for card aspect ratio
-        ),
-        itemCount: 4, // Number of items in the grid
-        itemBuilder: (context, index) {
-        return _buildProductCard(
-        image: "assets/images/headset.png",
-        );
-        },
-        ),
-            ),
+          SizedBox(
+            height: 1.sh,
+            child: GridView.builder(
+            physics: NeverScrollableScrollPhysics(),
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2, // Number of columns
+                    crossAxisSpacing: 10.0, // Horizontal space between items
+                    mainAxisSpacing: 10.0, // Vertical space between items
+                    childAspectRatio: 0.75, // Adjust for card aspect ratio
+                    ),
+                    itemCount: 4, // Number of items in the grid
+                    itemBuilder: (context, index) {
+                    return _buildProductCard(
+                    image: "assets/images/headset.png",
+                    );
+                    },
+              ),
+          ),
 
 
           ],
